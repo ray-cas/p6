@@ -1,3 +1,4 @@
+
 // Import d'Express
 const express = require('express');
 
@@ -20,7 +21,8 @@ const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 
 // Configuration de la base de données mongoDB
-mongoose.connect('mongodb+srv://hypsis:doyMTpD4Hjn2i7Qz@cluster0.2cylmwk.mongodb.net/?retryWrites=true&w=majority ',
+const key = process.env.KEY_API;
+mongoose.connect(key,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
